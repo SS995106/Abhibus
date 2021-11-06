@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <taskdef resource="org/cruxframework/crux/tools/crux-tools.xml">
+    <classpath>
+      <path refid="maven.compile.classpath"/>
+    </classpath>
+  </taskdef>
+  <serviceMapper projectDir="E:\Abhibus\Busess\target/Busess">
+    <classpath>
+      <path refid="maven.compile.classpath"/>
+      <pathelement path="E:\Abhibus\Busess\target/Busess/WEB-INF//classes/"/>
+    </classpath>
+  </serviceMapper>
+  <cruxcompiler outputDir="E:\Abhibus\Busess\target/Busess" keepPagesGeneratedFiles="true" webDir="E:\Abhibus\Busess\target/Busess" pagesOutputDir="E:\Abhibus\Busess\target/Busess" pageFileExtension="html" srcDir="E:\Abhibus\Busess\src\main\java" outputCharset="UTF-8" doNotPreCompileJavaSource="true">
+    <classpath>
+      <path refid="maven.compile.classpath"/>
+    </classpath>
+    <jvmarg value="-Xmx768M"/>
+    <jvmarg value="-Xms256M"/>
+    <arg value="-localWorkers"/>
+    <arg value="2"/>
+  </cruxcompiler>
+</target>
+</project>
